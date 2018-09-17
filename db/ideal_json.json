@@ -1,0 +1,43 @@
+{
+    "players": [
+        {
+        "name": "Kristaps Porzingis",
+        "career_stats": {
+          "career": {
+              "year": [2015, 2016, 2017],
+              "team": ["NY", "NY", "NY"],
+              "games": [72, 66, 48],
+              "minutes": [2048, 2166, 1551]
+          },
+          "field_goals": {
+            "made": [373, 443, 390],
+            "attempted": [886, 985, 889],
+            "percent": [0.421, 0.450, 0.439]
+          },
+          "three_points": {
+            "made": [81, 112, 90],
+            "attempted": [243, 314, 228],
+            "percent": [0.333, 0.357, 0.395]
+          },
+          "free_throws": {
+            "made": [201, 198, 218],
+            "attempted": [240, 252, 275],
+            "percent": [0.838, 0.786, 0.793]
+          },
+          "rebounds": {
+            "offense": [12, 111, 62],
+            "defense": [394, 364, 254],
+            "total": [526, 475, 316]
+          },
+          "misc": {
+            "assists": [94, 97, 57],
+            "turnovers": [121, 118, 93],
+            "steals": [53, 47, 36],
+            "blocks": [134, 129, 115],
+            "personal_fouls": [205, 244, 141],
+            "points": [1028, 1196, 1088]
+          },
+        }
+      }
+    ]
+  }
