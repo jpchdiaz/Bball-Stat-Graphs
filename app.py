@@ -19,15 +19,12 @@ app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/NBATOP10STATS_v3.sqlite"
 db = SQLAlchemy(app)
-#
-# # reflect an existing database into a new model
+# reflect an existing database into a new model
 Base = automap_base()
-# # reflect the tables
+# reflect the tables
 Base.prepare(db.engine, reflect=True)
-#
-# # Save references to each table
-# Samples_Metadata = Base.classes.sample_metadata
-# Samples = Base.classes.samples
+
+# Save references to each table
 NBATOP = Base.classes.nbatop
 
 @app.route("/")
@@ -50,10 +47,10 @@ def samples(playerName):
     """Career Stats Information"""
     stmt = db.session.query(NBATOP).statement
     df = pd.read_sql_query(stmt, db.session.bind)
-    #
-    # # Filter the data based on the sample number and
-    # # only keep rows with values above 1
+
+    # Filter data to hone down on player name and return certain stats
     sample_data = df.loc[df["Player"] == playerName, ["Player", "Year", "Team", "FGM", "FG%", "FTM", "FT%"]]
+    
     # # Format the data to send as json
     data = {
         "year": sample_data.Year.values.tolist(),
