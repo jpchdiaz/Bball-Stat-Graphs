@@ -78,7 +78,20 @@ function buildStats(playerName) {
     };
 
       Plotly.newPlot('plot2', data2, layout2);
-    // plot3 plot 3
+
+    // plot3 plot 3 values = TPTM, TPTA
+    var data =[{
+      values: response.three_points_made,
+      labels: response.year,
+      type: 'pie'
+    }]
+
+    var layout = {
+      height: 400,
+      width: 500
+    };
+
+      Plotly.newPlot('plot3', data, layout);
     });
 };
 
@@ -125,7 +138,7 @@ function buildStats2(playerName) {
         }
     };
 
-      Plotly.newPlot('plot3', data1, layout1);
+      Plotly.newPlot('plot5', data1, layout1);
 
     // plot2 plot 2 xaxis = year, yaxis = fgm per year
     var trace2 = {
@@ -160,7 +173,7 @@ function buildStats2(playerName) {
         }
     };
 
-      Plotly.newPlot('plot4', data2, layout2);
+      Plotly.newPlot('plot6', data2, layout2);
     // plot3 plot 3
     });
 };
